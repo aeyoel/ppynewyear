@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Happy New Year, Adekkk 💖</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+            color: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 35px 30px;
+            max-width: 700px;
+            width: 100%;
+            text-align: center;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+            animation: fadeIn 2s ease;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #ffd369;
+            margin-bottom: 15px;
+        }
+
+        h1 span {
+            font-size: 3rem;
+        }
+
+        /* Countdown */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 25px 0 35px;
+            flex-wrap: wrap;
+        }
+
+        .time-box {
+            background: rgba(0,0,0,0.35);
+            border-radius: 12px;
+            padding: 12px 15px;
+            min-width: 70px;
+        }
+
+        .time-box h2 {
+            font-size: 1.6rem;
+            color: #ffd369;
+        }
+
+        .time-box span {
+            font-size: 0.75rem;
+            color: #ddd;
+        }
+
+        /* Foto */
+        .photo {
+            margin: 30px 0;
+        }
+
+        .photo img {
+            width: 100%;
+            max-width: 280px;
+            border-radius: 18px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            object-fit: cover;
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 22px;
+            color: #eaeaea;
+        }
+
+        .highlight {
+            color: #ffd369;
+            font-weight: 500;
+        }
+
+        .footer {
+            margin-top: 35px;
+            font-style: italic;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: rgba(255, 105, 135, 0.8);
+            animation: float 6s linear infinite;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(100vh) scale(1);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-10vh) scale(1.4);
+                opacity: 0;
+            }
+        }
+
+        /* Mobile Friendly */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.1rem;
+            }
+
+            h1 span {
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Happy New Year <span>2026</span> 🎆</h1>
+
+        <!-- COUNTDOWN -->
+        <div class="countdown">
+            <div class="time-box">
+                <h2 id="days">00</h2>
+                <span>Days</span>
+            </div>
+            <div class="time-box">
+                <h2 id="hours">00</h2>
+                <span>Hours</span>
+            </div>
+            <div class="time-box">
+                <h2 id="minutes">00</h2>
+                <span>Minutes</span>
+            </div>
+            <div class="time-box">
+                <h2 id="seconds">00</h2>
+                <span>Seconds</span>
+            </div>
+        </div>
+
+        <!-- FOTO -->
+        <div class="photo">
+            <!-- GANTI FOTO DI SINI -->
+            <img src="foto-kita.png" alt="Our Moment">
+        </div>
+
+        <p>
+            Adekk, terima kasih sudah hadir di hidup aku.  
+            Di tahun <span class="highlight">2025</span>, we met, and somehow…  
+            you made me understand what it truly means  
+            <span class="highlight">to be loved and to love</span>.
+        </p>
+
+        <p>
+            Kita tertawa, shared silly moments,  
+            pertengkaran kecil yang selalu kita lewati,  
+            aku yang sering jahilin kamu  
+            sampai akhirnya kamu marah dan ngambek  
+            (which is honestly very cute 🤍).
+        </p>
+
+        <p>
+            Thank you for staying.  
+            Thank you for choosing us.  
+            Thank you for loving me in your own way.
+        </p>
+
+        <p>
+            Let’s welcome this new year with  
+            more patience, more laughter,  
+            more love, and endless memories together. 💫
+        </p>
+
+        <div class="footer">
+            With all my love,<br>
+            always yours 🤍
+        </div>
+    </div>
+
+    <!-- Floating Hearts -->
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 7000);
+        }
+
+        setInterval(createHeart, 400);
+
+        // COUNTDOWN SCRIPT
+        const newYear = new Date("January 1, 2026 00:00:00").getTime();
+
+        setInterval(() => {
+            const now = new Date().getTime();
+            const distance = newYear - now;
+
+            if (distance < 0) return;
+
+            document.getElementById("days").innerHTML =
+                Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerHTML =
+                Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("minutes").innerHTML =
+                Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("seconds").innerHTML =
+                Math.floor((distance % (1000 * 60)) / 1000);
+        }, 1000);
+    </script>
+
+</body>
+</html>
